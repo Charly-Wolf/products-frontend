@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-const url = 'https://products-api-7zdl.onrender.com/api/v1/products'
+const url = 'https://products-api-b6z0.onrender.com/api/v1/products'
 
 const initialState = {
   cartItems: [],
