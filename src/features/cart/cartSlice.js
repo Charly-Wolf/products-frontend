@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-const url = 'https://products-api-b6z0.onrender.com/api/v1/products'
+const url = 'http://localhost:5001/api/v1/products'
 
 const initialState = {
   cartItems: [],
@@ -31,14 +31,15 @@ const cartSlice = createSlice({
     },
     removeItem: (state, action) => {
       const itemId = action.payload
-      state.cartItems = state.cartItems.filter(item => item.id !== itemId)
+      state.cartItems = state.cartItems.filter(item => item._id !== itemId)
     },
     toggleItemAmount: (state, { payload }) => {
-      const itemId = payload.id
+      const itemId = payload._id
       const action = payload.action
-      const cartItem = state.cartItems.find(item => item.id === itemId)
+      const cartItem = state.cartItems.find(item => item._id === itemId)
 
       if (action === 'up') {
+        console.log("Amount of", cartItem.title, ": ", cartItem.amount)
         cartItem.amount = cartItem.amount + 1
       } else if (action === 'down') {
         cartItem.amount = cartItem.amount - 1
