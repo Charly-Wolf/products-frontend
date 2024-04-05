@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-const url = 'https://products-api-b6z0.onrender.com/api/v1/products' // TODO: use env
+const url = 'https://products-api-nine.vercel.app/api/v1/products' // TODO: use env
 
 const initialState = {
   cartItems: [],
